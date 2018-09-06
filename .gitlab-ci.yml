@@ -1,11 +1,5 @@
 image: docker:stable
 
-variables:
-  LATEST_VER: angristan/riot:latest
-  MAJOR_VER: angristan/riot:0
-  MINOR_VER: angristan/riot:0.16
-  PATCH_VER: angristan/riot:0.16.1
-
 stages:
   - Build image
 
@@ -13,4 +7,4 @@ docker build:
   stage: Build image
   script:
   - docker info
-  - docker build -t $LATEST_VER -t $MAJOR_VER -t $MINOR_VER -t $PATCH_VER -t $REV_VER .
+  - docker build -t riot .
