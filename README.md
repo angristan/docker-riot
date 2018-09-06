@@ -15,7 +15,7 @@ Besides manual updates, the images are automatically rebuilt every week to make 
 
 ### Build-time variables
 
-- **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.16.1`)
+- **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.16.3`)
 
 ### Running the container
 

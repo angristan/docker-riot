@@ -3,7 +3,7 @@ FROM node:8-alpine
 LABEL maintainer="angristan"
 LABEL source="https://github.com/angristan/docker-riot"
 
-ARG RIOT_VER=v0.16.1
+ARG RIOT_VER=v0.16.3
 
 RUN apk update \
     && apk add --no-cache \
