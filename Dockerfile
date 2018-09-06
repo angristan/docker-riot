@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM node:8-alpine
 
 LABEL maintainer="angristan"
 LABEL source="https://github.com/angristan/docker-riot"
@@ -13,9 +13,9 @@ RUN apk update \
         libffi \
         libjpeg-turbo \
         libssl1.0 \
-        nodejs \
         sqlite-libs \
         unzip \
+    && npm config set unsafe-perm true \
     && npm install -g webpack http-server \
     && curl -L https://github.com/vector-im/riot-web/archive/$RIOT_VER.zip -o riot.zip \
     && unzip riot.zip \
