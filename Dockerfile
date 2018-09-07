@@ -15,17 +15,18 @@ RUN apk update \
     && curl -L https://github.com/vector-im/riot-web/archive/$RIOT_VER.zip -o riot.zip \
     && unzip riot.zip \
     && rm riot.zip \
-    && mv riot-web-* riot-web \
-    && cd riot-web \
+    && mv riot-web-* riot \
+    && cd riot \
     && npm install \
     && npm run build \
     && apk del \
         git \
         unzip \
+        curl \
     && rm -rf /var/lib/apk/* /var/cache/apk/*
 
-WORKDIR /riot-web/webapp
+WORKDIR /riot/webapp
 
-EXPOSE 8765
+EXPOSE 8080
 
 CMD ["http-server", "-p", "8765", "-A", "0.0.0.0"]

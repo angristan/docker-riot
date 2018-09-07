@@ -13,6 +13,8 @@ Besides manual updates, the images are automatically rebuilt every week to make 
 - Based on Alpine Linux
 - Running the latest stable version of [vector-im/riot-web](https://github.com/vector-im/riot-web), built from source
 
+Riot is not a server. This image only builds static ressources. Since the base image is nodejs, we're using [http-server](https://github.com/indexzero/http-server) to serve the content easily.
+
 ### Build-time variables
 
 - **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.16.3`)
@@ -22,7 +24,7 @@ Besides manual updates, the images are automatically rebuilt every week to make 
 ```sh
 docker run -d \
   --name riot \
-  -p 127.0.0.1:8765:8765 \
+  -p 127.0.0.1:8080:8080 \
   angristan/riot:0.16
 ```
 
@@ -39,7 +41,7 @@ services:
     container_name: riot
     restart: always
     ports:
-      - 127.0.0.1:8765:8765
+      - 127.0.0.1:8080:8080
 ```
 
 Then use a reverse proxy to access your riot client on a domain via HTTPS.
@@ -52,7 +54,7 @@ location / {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_pass http://localhost:8765;
+    proxy_pass http://localhost:8080;
 }
 ```
 
@@ -60,4 +62,4 @@ location / {
 
 This image is based on [silvio/matrix-riot-docker](https://github.com/silvio/matrix-riot-docker.)
 
-I made mine because it wasn't updated regularly and I made quite a lot of changes to the repo so that it meet my standards.
+I made mine because it wasn't updated regularly and I made quite a lot of changes to the repo so that it meet my standards. It's also **much** simpler.
