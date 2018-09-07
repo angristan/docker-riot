@@ -25,7 +25,7 @@ Note: Riot is not a server. This image only builds static ressources and serves 
 ```sh
 docker run -d \
   --name riot \
-  -p 127.0.0.1:8080:8080 \
+  -p 127.0.0.1:8080:80 \
   angristan/riot:0.16
 ```
 
@@ -42,7 +42,7 @@ services:
     container_name: riot
     restart: always
     ports:
-      - 127.0.0.1:8080:8080
+      - 127.0.0.1:8080:80
 ```
 
 Then use a reverse proxy to access your riot client on a domain via HTTPS.
