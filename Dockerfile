@@ -29,11 +29,8 @@ RUN apk update \
         unzip \
     && rm -rf /var/lib/apk/* /var/cache/apk/*
 
-
-COPY start.sh /start.sh
-
-RUN chmod +x start.sh
+WORKDIR /riot-web/webapp
 
 EXPOSE 8765
 
-ENTRYPOINT ["/start.sh"]
+CMD ["http-server", "-p", "8765", "-A", "0.0.0.0"]
