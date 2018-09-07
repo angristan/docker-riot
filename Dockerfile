@@ -16,7 +16,7 @@ RUN apk update \
         sqlite-libs \
         unzip \
     && npm config set unsafe-perm true \
-    && npm install -g webpack http-server \
+    && npm install -g http-server \
     && curl -L https://github.com/vector-im/riot-web/archive/$RIOT_VER.zip -o riot.zip \
     && unzip riot.zip \
     && rm riot.zip \
