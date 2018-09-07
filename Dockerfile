@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:8-alpine as build
 
 LABEL maintainer="angristan"
 LABEL source="https://github.com/angristan/docker-riot"
@@ -17,8 +17,6 @@ RUN apk update \
     && cd riot \
     && npm install \
     && npm run build \
-    && npm config set unsafe-perm true \
-    && npm install -g http-server \
     && npm cache clean --force \
     && cd .. \
     && mv riot/webapp/ app/ \
@@ -29,8 +27,6 @@ RUN apk update \
         unzip \
     && rm -rf /var/lib/apk/* /var/cache/apk/*
 
-WORKDIR /app
+FROM nginx:stable-alpine  
 
-EXPOSE 8080
-
-CMD ["http-server", "-p", "8765", "-A", "0.0.0.0"]
+COPY --from=build /app /usr/share/nginx/html

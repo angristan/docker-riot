@@ -10,10 +10,11 @@ Besides manual updates, the images are automatically rebuilt every week to make 
 
 ## Features
 
-- Based on Alpine Linux
-- Running the latest stable version of [vector-im/riot-web](https://github.com/vector-im/riot-web), built from source
+Note: Riot is not a server. This image only builds static ressources and serves them with Nginx.
 
-Riot is not a server. This image only builds static ressources. Since the base image is nodejs, we're using [http-server](https://github.com/indexzero/http-server) to serve the content easily.
+- Light! (*see below*)
+- Multi-stage build. Build on `node:8-alpine` and copy the built files to `nginx:stable-alpine`.
+- Running the latest stable version of [vector-im/riot-web](https://github.com/vector-im/riot-web), built from source
 
 ### Build-time variables
 
@@ -62,4 +63,4 @@ location / {
 
 This image is based on [silvio/matrix-riot-docker](https://github.com/silvio/matrix-riot-docker).
 
-I made mine because it wasn't updated regularly and I made quite a lot of changes to the repo so that it meet my standards. It's also **much** simpler, and 1/5th the size.
+I made mine because it wasn't updated regularly and I made quite a lot of changes to the repo so that it meet my standards. It's also **much** simpler, and **1/9th the size**.
