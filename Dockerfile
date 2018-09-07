@@ -19,13 +19,16 @@ RUN apk update \
     && cd riot \
     && npm install \
     && npm run build \
+    && cd .. \
+    && mv riot/webapp/ app/ \
+    && rm -rf riot \
     && apk del \
         git \
         unzip \
         curl \
     && rm -rf /var/lib/apk/* /var/cache/apk/*
 
-WORKDIR /riot/webapp
+WORKDIR /app
 
 EXPOSE 8080
 
