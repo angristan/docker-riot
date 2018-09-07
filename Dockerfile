@@ -9,11 +9,6 @@ RUN apk update \
     && apk add --no-cache \
         curl \
         git \
-        libevent \
-        libffi \
-        libjpeg-turbo \
-        libssl1.0 \
-        sqlite-libs \
         unzip \
     && npm config set unsafe-perm true \
     && npm install -g http-server \
