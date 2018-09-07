@@ -10,8 +10,6 @@ RUN apk update \
         curl \
         git \
         unzip \
-    && npm config set unsafe-perm true \
-    && npm install -g http-server \
     && curl -L https://github.com/vector-im/riot-web/archive/$RIOT_VER.zip -o riot.zip \
     && unzip riot.zip \
     && rm riot.zip \
@@ -19,13 +17,16 @@ RUN apk update \
     && cd riot \
     && npm install \
     && npm run build \
+    && npm config set unsafe-perm true \
+    && npm install -g http-server \
+    && npm cache clean --force \
     && cd .. \
     && mv riot/webapp/ app/ \
     && rm -rf riot \
     && apk del \
+        curl \
         git \
         unzip \
-        curl \
     && rm -rf /var/lib/apk/* /var/cache/apk/*
 
 WORKDIR /app

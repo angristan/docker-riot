@@ -62,4 +62,4 @@ location / {
 
 This image is based on [silvio/matrix-riot-docker](https://github.com/silvio/matrix-riot-docker).
 
-I made mine because it wasn't updated regularly and I made quite a lot of changes to the repo so that it meet my standards. It's also **much** simpler, and less than half the size.
+I made mine because it wasn't updated regularly and I made quite a lot of changes to the repo so that it meet my standards. It's also **much** simpler, and 1/5th the size.
