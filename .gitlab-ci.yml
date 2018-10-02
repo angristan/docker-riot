@@ -4,7 +4,7 @@ variables:
   LATEST_VER: angristan/riot:latest
   MAJOR_VER: angristan/riot:0
   MINOR_VER: angristan/riot:0.16
-  PATCH_VER: angristan/riot:0.16.4
+  PATCH_VER: angristan/riot:0.16.5
 
 stages:
   - Build image
