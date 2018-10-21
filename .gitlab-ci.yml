@@ -3,8 +3,8 @@ image: docker:stable
 variables:
   LATEST_VER: angristan/riot:latest
   MAJOR_VER: angristan/riot:0
-  MINOR_VER: angristan/riot:0.16
-  PATCH_VER: angristan/riot:0.16.6
+  MINOR_VER: angristan/riot:0.17
+  PATCH_VER: angristan/riot:0.17.0
 
 stages:
   - Build image

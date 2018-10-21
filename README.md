@@ -18,7 +18,7 @@ Note: Riot is not a server. This image only builds static ressources and serves 
 
 ### Build-time variables
 
-- **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.16.6`)
+- **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.17.0`)
 
 ### Running the container
 
@@ -26,7 +26,7 @@ Note: Riot is not a server. This image only builds static ressources and serves 
 docker run -d \
   --name riot \
   -p 127.0.0.1:8080:80 \
-  angristan/riot:0.16
+  angristan/riot:0.17
 ```
 
 ### Docker Compose
@@ -38,7 +38,7 @@ version: '3'
 
 services:
   riot:
-    image: angristan/riot:0.16
+    image: angristan/riot:0.17
     container_name: riot
     restart: always
     ports:
