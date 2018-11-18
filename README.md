@@ -18,7 +18,7 @@ Note: Riot is not a server. This image only builds static ressources and serves 
 
 ### Build-time variables
 
-- **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.17.3`)
+- **`RIOT_VER`** : [version of Riot](https://github.com/vector-im/riot-web/releases) (`0.17.4`)
 
 ### Running the container
 
