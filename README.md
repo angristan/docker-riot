@@ -6,8 +6,6 @@
 
 This image is automatically built by [GitLab CI](https://gitlab.com/angristan/docker-riot/pipelines) and pushed to the [Docker Hub](https://hub.docker.com/r/angristan/riot/).
 
-Besides manual updates, the images are automatically rebuilt every week to make sure all softwares in the images are up-to-date.
-
 **I won't update this image anymore. Feel free to open PRs or to fork the repo.**
 
 ## Features
